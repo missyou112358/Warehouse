@@ -1,0 +1,1 @@
+create unique index IDX_WAREHOUSE_TYPE_UNIQ_NAME on WAREHOUSE_TYPE (NAME) ;

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.warehouse.web.instoreorder.InStoreOrderBrowse"
+        focusComponent="inStoreOrdersTable"
+        lookupComponent="inStoreOrdersTable"
+        messagesPack="com.company.warehouse.web.instoreorder">
+    <dsContext>
+        <groupDatasource id="inStoreOrdersDs"
+                         class="com.company.warehouse.entity.InStoreOrder"
+                         view="inStoreOrder-view">
+            <query>
+                <![CDATA[select e from warehouse$InStoreOrder e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="inStoreOrdersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="inStoreOrdersTable"
+                datasource="inStoreOrdersDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="inStoreOrdersTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="inStoreNumber"/>
+                <column id="supply"/>
+                <column id="batchNumber"/>
+                <column id="staff"/>
+                <column id="comment"/>
+                <column id="createTs"
+                        caption="msg://createTs"/>
+            </columns>
+            <rows datasource="inStoreOrdersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="inStoreOrdersTable.create"/>
+                <button id="editBtn"
+                        action="inStoreOrdersTable.edit"/>
+                <button id="removeBtn"
+                        action="inStoreOrdersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.warehouse.web.supply.SupplyBrowse"
+        focusComponent="suppliesTable"
+        lookupComponent="suppliesTable"
+        messagesPack="com.company.warehouse.web.supply">
+    <dsContext>
+        <groupDatasource id="suppliesDs"
+                         class="com.company.warehouse.entity.Supply"
+                         view="_local">
+            <query>
+                <![CDATA[select e from warehouse$Supply e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="suppliesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="suppliesTable"
+                datasource="suppliesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="suppliesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="supplyName"/>
+                <column id="address"/>
+                <column id="contacter"/>
+                <column id="telephone"/>
+                <column id="cellPhone"/>
+                <column id="email"/>
+            </columns>
+            <rows datasource="suppliesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="suppliesTable.create"/>
+                <button id="editBtn"
+                        action="suppliesTable.edit"/>
+                <button id="removeBtn"
+                        action="suppliesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

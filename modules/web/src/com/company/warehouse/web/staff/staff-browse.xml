@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.warehouse.web.staff.StaffBrowse"
+        focusComponent="staffsTable"
+        lookupComponent="staffsTable"
+        messagesPack="com.company.warehouse.web.staff">
+    <dsContext>
+        <groupDatasource id="staffsDs"
+                         class="com.company.warehouse.entity.Staff"
+                         view="staff-view">
+            <query>
+                <![CDATA[select e from warehouse$Staff e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="staffsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="staffsTable"
+                datasource="staffsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="staffsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="staffNumber"/>
+                <column id="name"/>
+                <column id="cellPhone"/>
+                <column id="inCompanyDate"/>
+                <column id="address"/>
+                <column id="email"/>
+            </columns>
+            <rows datasource="staffsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="staffsTable.create"/>
+                <button id="editBtn"
+                        action="staffsTable.edit"/>
+                <button id="removeBtn"
+                        action="staffsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

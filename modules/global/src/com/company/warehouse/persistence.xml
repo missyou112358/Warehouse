@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="Warehouse"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.company.warehouse.entity.Unit</class>
+        <class>com.company.warehouse.entity.Type</class>
+        <class>com.company.warehouse.entity.Material</class>
+        <class>com.company.warehouse.entity.Warehouse</class>
+        <class>com.company.warehouse.entity.StorePostion</class>
+        <class>com.company.warehouse.entity.Supply</class>
+        <class>com.company.warehouse.entity.Customer</class>
+        <class>com.company.warehouse.entity.Staff</class>
+        <class>com.company.warehouse.entity.InStoreOrder</class>
+        <class>com.company.warehouse.entity.InOrderDetail</class>
+        <class>com.company.warehouse.entity.OutStoreOrder</class>
+        <class>com.company.warehouse.entity.OutOrderDetail</class>
+    </persistence-unit>
+</persistence>

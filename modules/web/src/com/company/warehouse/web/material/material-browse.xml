@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.warehouse.web.material.MaterialBrowse"
+        focusComponent="materialsTable"
+        lookupComponent="materialsTable"
+        messagesPack="com.company.warehouse.web.material">
+    <dsContext>
+        <groupDatasource id="materialsDs"
+                         class="com.company.warehouse.entity.Material"
+                         view="material-view">
+            <query>
+                <![CDATA[select e from warehouse$Material e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="materialsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="materialsTable"
+                datasource="materialsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="materialsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+                <action id="excel"/>
+            </actions>
+            <columns>
+                <column id="materialNumber"/>
+                <column id="materialName"/>
+                <column id="supply"/>
+                <column id="model"/>
+                <column id="quantity"/>
+                <column id="unit"/>
+                <column id="price"/>
+                <column id="totalPrice"/>
+                <column id="type"/>
+                <column id="responser"/>
+                <column id="cooperator"/>
+                <column id="planDate"/>
+                <column id="actDate"/>
+                <column id="comment"/>
+            </columns>
+            <rows datasource="materialsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="materialsTable.create"/>
+                <button id="editBtn"
+                        action="materialsTable.edit"/>
+                <button id="removeBtn"
+                        action="materialsTable.remove"/>
+                <button id="excelBtn"
+                        action="materialsTable.excel"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

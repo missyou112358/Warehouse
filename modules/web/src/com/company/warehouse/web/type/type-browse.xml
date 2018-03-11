@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.warehouse.web.type.TypeBrowse"
+        focusComponent="typesTable"
+        lookupComponent="typesTable"
+        messagesPack="com.company.warehouse.web.type">
+    <dsContext>
+        <groupDatasource id="typesDs"
+                         class="com.company.warehouse.entity.Type"
+                         view="_local">
+            <query>
+                <![CDATA[select e from warehouse$Type e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="typesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="typesTable"
+                datasource="typesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="typesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+            </columns>
+            <rows datasource="typesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="typesTable.create"/>
+                <button id="editBtn"
+                        action="typesTable.edit"/>
+                <button id="removeBtn"
+                        action="typesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

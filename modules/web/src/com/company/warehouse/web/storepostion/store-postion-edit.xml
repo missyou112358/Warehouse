@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.warehouse.web.storepostion.StorePostionEdit"
+        datasource="storePostionDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.warehouse.web.storepostion">
+    <dsContext>
+        <datasource id="storePostionDs"
+                    class="com.company.warehouse.entity.StorePostion"
+                    view="storePostion-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="storePostionDs">
+            <column width="250px">
+                <field property="warehouse"/>
+                <field property="positionNumber"/>
+                <field property="positionName"/>
+                <field property="material"/>
+                <field property="maxWeight"/>
+                <field property="maxCubage"/>
+                <field property="description"
+                       rows="5"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

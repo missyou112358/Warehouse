@@ -1,0 +1,5 @@
+create table WAREHOUSE_IN_STORE_ORDER_IN_ORDER_DETAIL_LINK (
+    IN_STORE_ORDER_ID varchar(32),
+    IN_ORDER_DETAIL_ID varchar(32),
+    primary key (IN_STORE_ORDER_ID, IN_ORDER_DETAIL_ID)
+);

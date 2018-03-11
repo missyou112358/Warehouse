@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.warehouse.web.staff.StaffEdit"
+        datasource="staffDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.warehouse.web.staff">
+    <dsContext>
+        <datasource id="staffDs"
+                    class="com.company.warehouse.entity.Staff"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="staffDs">
+            <column width="250px">
+                <field property="staffNumber"/>
+                <field property="name"/>
+                <field property="cellPhone"/>
+                <field property="inCompanyDate"/>
+                <field property="address"/>
+                <field property="email"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

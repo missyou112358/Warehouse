@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="warehouseManage"
+          insertBefore="administration">
+        <item screen="warehouse$Unit.browse"/>
+        <item screen="warehouse$Type.browse"/>
+        <item screen="warehouse$Customer.browse"/>
+        <item screen="warehouse$InOrderDetail.browse"/>
+        <item screen="warehouse$InStoreOrder.browse"/>
+        <item screen="warehouse$OutOrderDetail.browse"/>
+        <item screen="warehouse$Staff.browse"/>
+        <item screen="warehouse$StorePostion.browse"/>
+        <item screen="warehouse$Supply.browse"/>
+        <item screen="warehouse$Warehouse.browse"/>
+        <item screen="warehouse$OutStoreOrder.browse"/>
+        <item screen="warehouse$Material.browse"/>
+    </menu>
+</menu-config>

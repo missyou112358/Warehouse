@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.warehouse.web.material.MaterialEdit"
+        datasource="materialDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.warehouse.web.material">
+    <dsContext>
+        <datasource id="materialDs"
+                    class="com.company.warehouse.entity.Material"
+                    view="material-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox"
+            spacing="true">
+        <scrollBox id="scrollBox"
+                   spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="materialDs">
+                <column width="250px">
+                    <field property="materialNumber"/>
+                    <field property="materialName"/>
+                    <field property="supply"/>
+                    <field property="model"/>
+                    <field property="quantity"/>
+                    <field property="unit"/>
+                    <field property="price"/>
+                    <field property="type"/>
+                    <field property="responser"/>
+                    <field property="cooperator"/>
+                    <field property="planDate"/>
+                    <field property="actDate"/>
+                    <field property="comment"/>
+                </column>
+            </fieldGroup>
+        </scrollBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

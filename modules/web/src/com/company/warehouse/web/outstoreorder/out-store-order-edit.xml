@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.warehouse.web.outstoreorder.OutStoreOrderEdit"
+        datasource="outStoreOrderDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.warehouse.web.outstoreorder">
+    <dsContext>
+        <datasource id="outStoreOrderDs"
+                    class="com.company.warehouse.entity.OutStoreOrder"
+                    view="outStoreOrder-view">
+            <collectionDatasource id="detailsDs"
+                                  property="details"/>
+            <collectionDatasource id="detailsDs"
+                                  property="details"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="outStoreOrderDs">
+            <column width="250px">
+                <field property="outStoreNumber"/>
+                <field property="customer"/>
+                <field property="staff"/>
+                <field property="comment"
+                       rows="5"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="detailsBox"
+                  caption="msg://com.company.warehouse.entity/OutStoreOrder.details">
+            <table id="detailsTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="add"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="quantity"/>
+                </columns>
+                <rows datasource="detailsDs"/>
+                <buttonsPanel>
+                    <button action="detailsTable.add"/>
+                    <button action="detailsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <groupBox id="detailsBox"
+                  caption="msg://com.company.warehouse.entity/OutStoreOrder.details">
+            <table id="detailsTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="add"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="material"/>
+                    <column id="quantity"/>
+                </columns>
+                <rows datasource="detailsDs"/>
+                <buttonsPanel>
+                    <button action="detailsTable.add"/>
+                    <button action="detailsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

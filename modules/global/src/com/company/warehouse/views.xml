@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.warehouse.entity.InOrderDetail"
+          extends="_local"
+          name="inOrderDetail-view">
+        <property name="material"
+                  view="_minimal"/>
+        <property name="storePosition"
+                  view="_minimal"/>
+        <property name="inStoreOrder"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.warehouse.entity.InStoreOrder"
+          extends="_local"
+          name="inStoreOrder-view">
+        <property name="supply"
+                  view="_minimal"/>
+        <property name="staff"
+                  view="_minimal"/>
+        <property name="createTs"/>
+        <property name="details"
+                  view="_local"/>
+    </view>
+    <view class="com.company.warehouse.entity.Material"
+          extends="_local"
+          name="material-view">
+        <property name="type"
+                  view="_minimal"/>
+        <property name="unit"
+                  view="_minimal"/>
+        <property name="cooperator"
+                  view="_minimal"/>
+        <property name="responser"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.warehouse.entity.OutOrderDetail"
+          extends="_local"
+          name="outOrderDetail-view">
+        <property name="material"
+                  view="_minimal"/>
+        <property name="outStoreOrder"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.warehouse.entity.Staff"
+          extends="_local"
+          name="staff-view"/>
+    <view class="com.company.warehouse.entity.StorePostion"
+          extends="_local"
+          name="storePostion-view">
+        <property name="warehouse"
+                  view="_minimal"/>
+        <property name="material"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.warehouse.entity.OutStoreOrder"
+          extends="_local"
+          name="outStoreOrder-view">
+        <property name="customer"
+                  view="_minimal"/>
+        <property name="staff"
+                  view="_minimal"/>
+        <property name="createTs"/>
+        <property name="details"
+                  view="_local"/>
+    </view>
+</views>

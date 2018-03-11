@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.warehouse.web.storepostion.StorePostionBrowse"
+        focusComponent="storePostionsTable"
+        lookupComponent="storePostionsTable"
+        messagesPack="com.company.warehouse.web.storepostion">
+    <dsContext>
+        <groupDatasource id="storePostionsDs"
+                         class="com.company.warehouse.entity.StorePostion"
+                         view="storePostion-view">
+            <query>
+                <![CDATA[select e from warehouse$StorePostion e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="storePostionsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="storePostionsTable"
+                datasource="storePostionsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="storePostionsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="warehouse"/>
+                <column id="positionNumber"/>
+                <column id="positionName"/>
+                <column id="material"/>
+                <column id="maxWeight"/>
+                <column id="maxCubage"/>
+                <column id="description"/>
+            </columns>
+            <rows datasource="storePostionsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="storePostionsTable.create"/>
+                <button id="editBtn"
+                        action="storePostionsTable.edit"/>
+                <button id="removeBtn"
+                        action="storePostionsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
